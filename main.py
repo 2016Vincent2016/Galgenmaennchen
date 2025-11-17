@@ -9,7 +9,15 @@ print('Поехали!')
 
 word = 'Stuttgart'
 
-for symb in word:
-    print(symb, end= ' ')
+letters = []
 
-
+while True:
+    letter = input('Введите букву: ')
+    letters.append(letter)
+    print(letters)
+    for symb in word:
+        if symb in letters:
+            print(symb, end= ' ')
+        else:
+            print('*', end=' ')
+    print()
