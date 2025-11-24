@@ -10,8 +10,11 @@ print('Поехали!')
 word = 'Stuttgart'
 
 letters = []
+isWin = True
+hp = 10
 
-while True:
+while hp > 0:
+    isWin = True
     letter = input('Введите букву: ')
     letters.append(letter)
     print(letters)
@@ -20,4 +23,13 @@ while True:
             print(symb, end= ' ')
         else:
             print('*', end=' ')
+            isWin = False
     print()
+
+    if isWin:
+        print('Ты угадал! Молодец')
+        break
+
+    if letter not in word:
+        hp -= 1
+        print(f'Осталось попыток: {hp} ')
