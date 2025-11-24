@@ -1,4 +1,5 @@
 import os
+import random
 
 clear = lambda: os.system('cls')
 
@@ -7,7 +8,9 @@ input('*Нажми Enter, чтобы продолжить*')
 clear()
 print('Поехали!')
 
-word = 'Stuttgart'
+list_of_words = 'helloworld', 'worldhello'
+#list_of_words = 'Rinderkennzeichnungsfleischetikettierungsüberwachungsaufgabenübertragungsgesetz', 'Grundstücksverkehrsgenehmigungszuständigkeitsübertragungsverordnung', 'Donaudampfschifffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft'
+word = random.choice(list_of_words)
 
 letters = []
 isWin = True
@@ -27,9 +30,13 @@ while hp > 0:
     print()
 
     if isWin:
-        print('Ты угадал! Молодец')
+        print('Ты угадал! Молодец!🎉🎉🎉')
         break
 
     if letter not in word:
         hp -= 1
         print(f'Осталось попыток: {hp} ')
+
+if hp == 0:
+    print("Иди к чёрту и болше не пользуйся этой программый! 🤬🤬😡")
+
